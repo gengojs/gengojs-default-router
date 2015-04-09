@@ -141,7 +141,7 @@ exports['default'] = function () {
       // Expose internal API
       if (req && options.enabled) this.router = new Router(req.path, this.utils, options.enabled);
       // Debug
-      if (this.router && options.enabled) _debug2['default']('default-router')('path:', this.router.route(), 'toArray:', this.router.route().toArray(), 'toDot:', this.router.route().toDot());
+      if (this.router && options.enabled) _debug2['default']('default-router')('path:', this.router.path, 'toArray:', this.router.toArray(), 'toDot:', this.router.toDot());
     },
     'package': _import2['default'].merge({
       type: 'router'
