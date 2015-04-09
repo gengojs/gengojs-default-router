@@ -134,20 +134,19 @@ var Router = (function (_Path) {
 
 exports['default'] = function () {
   'use strict';
-  var pkg = require('./package');
-  pkg.type = 'router';
   return {
-    main: function router(req) {
+    main: function main(req) {
       // Set options
-      var options = this._router.options;
-      // Set defaults
-      options = this._router.options = _import2['default'].defaults(options || {}, require('./defaults'));
+      var options = this.options.router;
       // Expose internal API
       if (req && options.enabled) this.router = new Router(req.path, this.utils, options.enabled);
       // Debug
       if (this.router && options.enabled) _debug2['default']('default-router')('path:', this.router.route(), 'toArray:', this.router.route().toArray(), 'toDot:', this.router.route().toDot());
     },
-    'package': pkg,
+    'package': _import2['default'].merge({
+      type: 'router'
+    }, require('./package')),
+    defaults: require('./defaults'),
     // Export the class for
     // test purposes
     mock: Router

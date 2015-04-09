@@ -40,5 +40,14 @@ describe('Router', function() {
         assert.strictEqual(route.toDot(), 'hello.world');
       });
     });
+    describe('isEnabled', function() {
+      var route = new Router('/hello/world/en', true);
+      it('should exist', function() {
+        assert.isDefined(route.isEnabled);
+      });
+      it('should return true', function() {
+        assert.isTrue(route.isEnabled());
+      });
+    });
   });
 });
