@@ -139,7 +139,7 @@ exports['default'] = function () {
       // Set options
       var options = this.options.router;
       // Expose internal API
-      if (req && options.enabled) this.router = new Router(req.path, this.utils, options.enabled);
+      this.router = new Router(req.path, this.utils, options.enabled);
       // Debug
       if (this.router && options.enabled) _debug2['default']('default-router')('path:', this.router.path, 'toArray:', this.router.toArray(), 'toDot:', this.router.toDot());
     },
