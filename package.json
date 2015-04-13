@@ -1,6 +1,6 @@
 {
   "name": "gengojs-default-router",
-  "version": "0.0.1-beta.4",
+  "version": "0.0.1-beta.5",
   "description": "The default router plugin for gengojs",
   "main": "index.js",
   "scripts": {
