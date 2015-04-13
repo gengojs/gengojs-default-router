@@ -4,7 +4,8 @@
   "description": "The default router plugin for gengojs",
   "main": "index.js",
   "scripts": {
-    "test": "grunt && mocha ./test/*.js"
+    "test": "grunt && mocha ./test/*.js",
+    "prepublish": "grunt && mocha ./test/*.js"
   },
   "repository": {
     "type": "git",
