@@ -38,11 +38,15 @@ var Path = (function () {
   function Path(path) {
     _classCallCheck(this, Path);
 
-    this.path = path;
+    // If the string contains favico.ico
+    // replace it with an empty string
+    this.path = path.replace('favicon.ico', '');
   }
 
   _createClass(Path, [{
     key: 'isLocale',
+
+    /* Private: Checks if the string is a locale */
     value: function isLocale(str) {
       str = str.toLowerCase().replace('-', '_');
       // Compare the locales against cldr
@@ -70,11 +74,11 @@ var Path = (function () {
       } else {
         // For every item in the path
         // check to see if it contains a version or
-        // if its a regular name. then add it to the
+        // if it's a regular name, then add it to the
         // filtered array
         _import2['default'].forEach(path, function (item) {
           //Make sure the path does not contain a locale
-          if (!this.isLocale(item) || !/favicon\.ico/g.test(item)) if (item.match(version)) {
+          if (!this.isLocale(item)) if (item.match(version)) {
             // Prevent the version dots from being
             // interpreted as a dot notation
             filtered.push(item.replace('.', '*'));
