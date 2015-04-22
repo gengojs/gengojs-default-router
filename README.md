@@ -28,22 +28,34 @@ app.use(gengo({
 The default router is already included in gengojs so you should not have to require it.
 
 
-##Options
+## Options
 
 ```json
 {
 	"enabled":false
 }
 ```
-##Internal API
+## Internal API
 
-`toArray()` returns the path as an array
+* `this.router.toArray()` returns the path as an array
 
-`toDot()` returns the path as a dotted string
+* `this.router.toDot()` returns the path as a dotted string
 
-`isEnabled()` returns a boolean based on the enabled option
+* `this.router.isEnabled()` returns a boolean based on the enabled option
 
-##Dependencies
+**Example**:
+
+```js
+// Plugin ship
+function ship(){
+	// Context
+	this.router.toArray();
+	this.router.toDot();
+	this.router.isEnabled();
+}
+```
+
+## Dependencies
 
 None
 
@@ -59,3 +71,8 @@ Windows:
 ```bash
 SET DEBUG=default-router
 ```
+
+## Contribute
+
+Feel free to contribute or even fork the project. 
+This plugin has been written in ES6 and can be seen under lib/index.js.
