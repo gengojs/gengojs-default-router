@@ -1,18 +1,21 @@
 'use strict';
 
-var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
-
-var _get = function get(object, property, receiver) { var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
-
-var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
-
-var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { desc = parent = getter = undefined; _again = false; var object = _x,
+    property = _x2,
+    receiver = _x3; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
 /**
  * Takeshi Iwana aka iwatakeshi
  * MIT 2015
@@ -22,17 +25,17 @@ Object.defineProperty(exports, '__esModule', {
  * according to the path.
  */
 
-var _import = require('lodash');
+var _lodash = require('lodash');
 
-var _import2 = _interopRequireWildcard(_import);
+var _lodash2 = _interopRequireDefault(_lodash);
 
 var _cldr = require('cldr');
 
-var _cldr2 = _interopRequireWildcard(_cldr);
+var _cldr2 = _interopRequireDefault(_cldr);
 
 var _debug = require('debug');
 
-var _debug2 = _interopRequireWildcard(_debug);
+var _debug2 = _interopRequireDefault(_debug);
 
 var Path = (function () {
   function Path(path) {
@@ -50,7 +53,7 @@ var Path = (function () {
     value: function isLocale(str) {
       str = str.toLowerCase().replace('-', '_');
       // Compare the locales against cldr
-      return _import2['default'].contains(_cldr2['default'].localeIds, str);
+      return _lodash2['default'].contains(_cldr2['default'].localeIds, str);
     }
   }, {
     key: 'toArray',
@@ -76,7 +79,7 @@ var Path = (function () {
         // check to see if it contains a version or
         // if it's a regular name, then add it to the
         // filtered array
-        _import2['default'].forEach(path, function (item) {
+        _lodash2['default'].forEach(path, function (item) {
           //Make sure the path does not contain a locale
           if (!this.isLocale(item)) if (item.match(version)) {
             // Prevent the version dots from being
@@ -105,11 +108,7 @@ var Path = (function () {
     key: 'toDot',
     value: function toDot(array) {
       array = array ? array : this.toArray();
-      if (array.length > 1) {
-        return array.join().replace(/,/g, '.');
-      } else {
-        return array[0];
-      }
+      if (array.length > 1) return array.join().replace(/,/g, '.');else return array[0];
     }
   }]);
 
@@ -147,7 +146,7 @@ exports['default'] = function () {
       // Debug
       if (this.router && options.enabled) _debug2['default']('default-router')('path:', this.router.path, 'toArray:', this.router.toArray(), 'toDot:', this.router.toDot());
     },
-    'package': _import2['default'].merge({
+    'package': _lodash2['default'].merge({
       type: 'router'
     }, require('./package')),
     defaults: require('./defaults'),

@@ -1,6 +1,6 @@
 # gengojs-default-router
 
-The default router plugin for gengo.js, the best i18n library for Express, Koa, Hapi.*
+The default router plugin for gengo.js, the best i18n library for Node.
 
 [![Build Status](https://travis-ci.org/iwatakeshi/gengojs-default-router.svg?branch=master)](https://travis-ci.org/iwatakeshi/gengojs-default-route)
 
@@ -12,7 +12,7 @@ var gengo = require('gengojs');
 var router = require('gengojs-default-router');
 
 /* In whatever framework you are using: */
- 
+
 // I'll use express for an example
 // but it shouldn't matter
 
@@ -74,5 +74,5 @@ SET DEBUG=default-router
 
 ## Contribute
 
-Feel free to contribute or even fork the project. 
+Feel free to contribute or even fork the project.
 This plugin has been written in ES6 and can be seen under lib/index.js.
