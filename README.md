@@ -1,6 +1,6 @@
 # gengojs-default-router
 
-The default router plugin for gengo.js, the best i18n library for Node.
+The default router plugin for gengo.js.
 
 [![Build Status](https://travis-ci.org/iwatakeshi/gengojs-default-router.svg?branch=master)](https://travis-ci.org/iwatakeshi/gengojs-default-route)
 
