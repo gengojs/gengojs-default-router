@@ -1,14 +1,14 @@
 /* global describe, it*/
 var assert = require('chai').assert;
 var Core = require('gengojs-core');
-var router = require('../');
+var router = require('../src/');
 var Router = router().mock;
 describe('Router', function() {
   'use strict';
   describe('load plugin', function() {
     it('should exist Gengo', function() {
       var gengo = new Core({}, router());
-      assert.isDefined(gengo.plugins.routers[0]);
+      assert.isDefined(gengo.plugins.router);
     });
   });
 

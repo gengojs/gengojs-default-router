@@ -2,7 +2,7 @@
 
 The default router plugin for gengo.js.
 
-[![Build Status](https://travis-ci.org/iwatakeshi/gengojs-default-router.svg?branch=master)](https://travis-ci.org/iwatakeshi/gengojs-default-route)
+[![Build Status](https://travis-ci.org/gengojs/plugin-router.svg?branch=master)](https://travis-ci.org/gengojs/plugin-router)
 
 An example usage with options is:
 
@@ -25,7 +25,6 @@ app.use(gengo({
 	}
 },/*router()*/));
 ```
-The default router is already included in gengojs so you should not have to require it.
 
 
 ## Options
