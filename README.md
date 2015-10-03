@@ -56,7 +56,7 @@ function ship(){
 
 ## Dependencies
 
-None
+Not Applicable
 
 ## Debug
 
