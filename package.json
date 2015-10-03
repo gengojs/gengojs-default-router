@@ -1,6 +1,6 @@
 {
   "name": "gengojs-default-router",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The default router plugin for gengo.js",
   "main": "index.js",
   "scripts": {
