@@ -63,12 +63,12 @@ Not Applicable
 Unix:
 
 ```bash
-DEBUG=default-router
+DEBUG=gengo.router
 ```
 Windows:
 
 ```bash
-SET DEBUG=default-router
+SET DEBUG=gengo.router
 ```
 
 ## Contribute
