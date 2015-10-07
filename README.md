@@ -36,23 +36,12 @@ app.use(gengo({
 ```
 ## Internal API
 
-* `this.router.toArray()` returns the path as an array
-
-* `this.router.toDot()` returns the path as a dotted string
-
-* `this.router.isEnabled()` returns a boolean based on the enabled option
-
-**Example**:
-
-```js
-// Plugin ship
-function ship(){
-	// Context
-	this.router.toArray();
-	this.router.toDot();
-	this.router.isEnabled();
-}
-```
+* `this.router.toArray()`
+	* Should return the URL path as an array.
+* `this.router.toDot()`
+	* Should return the URL path as an dotted string.
+* `this.router.isEnabled()`
+	* Should return true if router is enabled.
 
 ## Dependencies
 
@@ -70,6 +59,8 @@ Windows:
 ```bash
 SET DEBUG=gengo.router
 ```
+
+See [gengojs-debug](https://github.com/gengojs/gengojs-debug) for usage.
 
 ## Contribute
 
