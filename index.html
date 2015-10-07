@@ -56,25 +56,22 @@ app.use(gengo({
 </code></pre>
 <h2>Internal API</h2>
 <ul>
-<li>
-<p><code>this.router.toArray()</code> returns the path as an array</p>
+<li><code>this.router.toArray()</code>
+<ul>
+<li>Should return the URL path as an array.</li>
+</ul>
 </li>
-<li>
-<p><code>this.router.toDot()</code> returns the path as a dotted string</p>
+<li><code>this.router.toDot()</code>
+<ul>
+<li>Should return the URL path as an dotted string.</li>
+</ul>
 </li>
-<li>
-<p><code>this.router.isEnabled()</code> returns a boolean based on the enabled option</p>
+<li><code>this.router.isEnabled()</code>
+<ul>
+<li>Should return true if router is enabled.</li>
+</ul>
 </li>
 </ul>
-<p><strong>Example</strong>:</p>
-<pre><code class="language-js">// Plugin ship
-function ship(){
-    // Context
-    this.router.toArray();
-    this.router.toDot();
-    this.router.isEnabled();
-}
-</code></pre>
 <h2>Dependencies</h2>
 <p>Not Applicable</p>
 <h2>Debug</h2>
@@ -84,6 +81,7 @@ function ship(){
 <p>Windows:</p>
 <pre><code class="language-bash">SET DEBUG=gengo.router
 </code></pre>
+<p>See <a href="https://github.com/gengojs/gengojs-debug">gengojs-debug</a> for usage.</p>
 <h2>Contribute</h2>
 <p>Feel free to contribute or even fork the project.
 This plugin has been written in ES6 and can be seen under lib/index.js.</p>
